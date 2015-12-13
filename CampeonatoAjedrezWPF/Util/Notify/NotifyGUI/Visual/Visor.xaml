@@ -1,0 +1,8 @@
+﻿<c:MetroWindow x:Class="Notify.NotifyGUI.Visual.Visor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:c="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             Title="Visor" WindowState="Maximized"  Closing="Window_Closing" GlowBrush="{DynamicResource AccentColorBrush}"  >
+    <Grid Name="Main" DataContext="{Binding}" />
+</c:MetroWindow>

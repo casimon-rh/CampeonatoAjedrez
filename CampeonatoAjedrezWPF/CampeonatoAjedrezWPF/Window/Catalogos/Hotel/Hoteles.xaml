@@ -1,0 +1,82 @@
+﻿<c:MetroWindow x:Class="CampeonatoAjedrezWPF.Window.Catalogos.Hoteles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:r="clr-namespace:CampeonatoAjedrezWPF.Routine.Catalogos"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CampeonatoAjedrezWPF.Window.Catalogos"
+        xmlns:c="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        GlowBrush="{DynamicResource AccentColorBrush}" ResizeMode="NoResize" ShowIconOnTitleBar="True"
+        mc:Ignorable="d" Title="Hoteles" Height="402" Width="596">
+    <Window.Resources>
+        <r:RutinasHoteles x:Key="Rutina" />
+    </Window.Resources>
+    <Grid>
+        <Button Margin="10,65,0,0" x:Name="Nuevo" Style="{DynamicResource SquareButtonStyle}" Click="Nuevo_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84">
+            <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
+                <Rectangle Width="20" Height="20" Fill="Black">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Nuevo"/>
+            </StackPanel>
+        </Button>
+        <Button Margin="10,146,0,0" x:Name="Aceptar" Style ="{DynamicResource SquareButtonStyle}"  Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" Click="Aceptar_Click" IsEnabled="False" >
+            <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
+                <Rectangle Width="20" Height="20" Fill="Black">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_check}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Aceptar"/>
+            </StackPanel>
+        </Button>
+        <Button Margin="10,225,0,0" x:Name="Cancelar" Style = "{DynamicResource SquareButtonStyle}"  Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" Click="Cancelar_Click">
+            <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
+                <Rectangle Width="20" Height="20" Fill="Black">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cancel}"/>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Cancelar"/>
+            </StackPanel>
+        </Button>
+
+        <c:FlipView Margin="99,65,0,0" IsBannerEnabled="False" x:Name="Flip" SelectedIndex="1" SelectionChanged="Flip_SelectionChanged" IsStatic="True" >
+            <Grid Name="Uno">
+                <DataGrid DataContext="{Binding Source={StaticResource Rutina}}" ItemsSource="{Binding Path=Catalogos}" x:Name="ElDataGrid"
+                          SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
+                          IsReadOnly="True" Margin="22,33,25,25">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_hotel}" />
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Current.nombrehotel}" />
+                        <DataGridTextColumn Header="Numero" Binding="{Binding Current.dirnum}" />
+                        <DataGridTextColumn Header="Calle" Binding="{Binding Current.dircalle}" />
+                        <DataGridTextColumn Header="Codigo Postal" Binding="{Binding Current.dircp}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid>
+                <Label Content="Nombre:" Margin="10,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
+                <TextBox Margin="136,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.nombrehotel,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <Label Content="Numero:" Margin="10,58,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
+                <TextBox Margin="136,58,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Text="{Binding Current.dirnum,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <Label Content="Calle:" Margin="10,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
+                <TextBox Margin="136,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dircalle,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <Label Content="Codigo Postal:" Margin="10,171,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94" />
+                <TextBox Margin="136,171,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dirnum,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <Button x:Name="Borrar" Margin="0,253,10,0" Style = "{DynamicResource SquareButtonStyle}" Click="Borrar_Click" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="89">
+                    <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
+                        <Rectangle Width="20" Height="20" Fill="Black">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_delete}"/>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Borrar"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </c:FlipView>
+    </Grid>
+    </c:MetroWindow>
