@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace Data.Interfaz
 {
+    public interface ICatalogos
+    {
+
+        /// <summary>
+        /// Actualiza la tabla o equivalente con su estado actual
+        /// </summary>
+        void update();
+        /// <summary>
+        /// Refresca la conexion a la base de datos o equivalente
+        /// </summary>
+        void refresh();
+    }
     /// <summary>
     /// Interfaz de DAO para una Interfaz Gráfica de Usuario
     /// Para utilizarse en conjunto con la implementación de la interfaz IDaoCrud<T>
@@ -14,7 +26,7 @@ namespace Data.Interfaz
     /// ->Pero Extendible
     /// </summary>
     /// <typeparam name="T">La tabla o equivalente</typeparam>
-    public interface ICatalogos<T>
+    public interface ICatalogos<T>:ICatalogos
     {
 
         IDaoCrud<T> dao { get; set; }
@@ -33,13 +45,5 @@ namespace Data.Interfaz
         /// </summary>
         /// <param name="aux">El objeto a insertar</param>
         void inserta(T aux);
-        /// <summary>
-        /// Actualiza la tabla o equivalente con su estado actual
-        /// </summary>
-        void update();
-        /// <summary>
-        /// Refresca la conexion a la base de datos o equivalente
-        /// </summary>
-        void refresh();
     }
 }

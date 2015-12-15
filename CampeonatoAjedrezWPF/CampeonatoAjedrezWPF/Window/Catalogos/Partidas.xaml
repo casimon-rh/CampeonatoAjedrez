@@ -49,19 +49,17 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_hotel}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding Current.idpartida}" />
                         <DataGridTextColumn Header="Arbitro" Binding="{Binding CurrentArbitro.nombre}" />
                         <DataGridTextColumn Header="Hora" Binding="{Binding Current.hora}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
             <Grid>
-                <Label Content="Nombre:" Margin="10,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
-                <TextBox Margin="136,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.nombrehotel,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Label Content="Arbitro:" Margin="10,58,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
                 <ComboBox Margin="136,58,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" SelectedItem="{Binding CurrentArbitro,Mode=TwoWay}" ItemsSource="{Binding CatalogoArbitros}"  DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Label Content="Hora:" Margin="10,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
-                < Margin="136,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dircalle,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <DatePicker Margin="136,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" SelectedDate="{Binding Current.Campeonato Ajedrez,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Button x:Name="Borrar" Margin="0,253,10,0" Style = "{DynamicResource SquareButtonStyle}" Click="Borrar_Click" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="89">
                     <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
                         <Rectangle Width="20" Height="20" Fill="Black">

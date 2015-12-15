@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -115,12 +116,15 @@
     <Compile Include="Data\Linq\Mapping\Partida.cs" />
     <Compile Include="Data\Linq\Mapping\PartidaJugador.cs" />
     <Compile Include="Data\Linq\Mapping\Telefono.cs" />
+    <Compile Include="Notify\IAccion.cs" />
     <Compile Include="Notify\NotifyGUI\CrystalReports\NotificaGUICrystal.cs" />
     <Compile Include="Notify\NotifyGUI\Dialogs.cs" />
     <Compile Include="Notify\NotifyGUI\INotificaGUI.cs" />
+    <Compile Include="Notify\NotifyGUI\INPCBase.cs" />
     <Compile Include="Notify\NotifyGUI\Visual\Visor.xaml.cs">
       <DependentUpon>Visor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Notify\SimpleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,16 +134,16 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mahapps\Metro\MahApps.Metro.NET45.csproj">
-      <Project>{942d11c4-29f5-46c4-8c14-4b976d56c637}</Project>
-      <Name>MahApps.Metro.NET45</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mahapps\Metro\MahApps.Metro.NET45.csproj">
+      <Project>{942d11c4-29f5-46c4-8c14-4b976d56c637}</Project>
+      <Name>MahApps.Metro.NET45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

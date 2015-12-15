@@ -1,0 +1,51 @@
+﻿<c:MetroWindow x:Class="SistemaAccesoWPF_CTP.Window.Sistemas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:r="clr-namespace:SistemaAccesoWPF_CTP.Routines"
+        xmlns:pan="clr-namespace:PanoramaControl;assembly=PanoramaControl"
+        Title="MainWindow" Height="350" Width="525" Loaded="MetroWindow_Loaded" WindowState="Maximized" ResizeMode="CanMinimize" >
+    <Window.Resources>
+        <r:SistemasModel x:Key="Rutina"/>
+        <DataTemplate DataType="{x:Type r:PanoramaTileModel}">
+            <Border x:Name="bord" BorderThickness="0" Width="200" Height="200" Margin="0"
+                    BorderBrush="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Background}" 
+                    Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type pan:Panorama}, Mode=FindAncestor}, Path=TileColorPair[0]}">
+                <Button   Command="{Binding TileClickedCommand}" Width="200" Height="200">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <Image x:Name="img" Source="{Binding ImageUrl}" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label Content="{Binding Text}" FontFamily="{DynamicResource DefaultFont}" FontSize="{DynamicResource {x:Static SystemFonts.CaptionFontSizeKey}}"
+                                       Foreground="White"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            </StackPanel>
+
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsDoubleWidth}" Value="True">
+                                    <Setter TargetName="img" Property="HorizontalAlignment" Value="Left" />
+                                    <Setter TargetName="img" Property="Margin" Value="10,0,0,0" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}, Mode=FindAncestor}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="bord" Property="BorderBrush" 
+                            Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type pan:Panorama}, Mode=FindAncestor}, Path=TileColorPair[1]}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDoubleWidth}" Value="True">
+                    <Setter TargetName="bord" Property="Width" Value="240" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0"  Background="{DynamicResource AccentColorBrush}"  >
+
+        <pan:Panorama  x:Name="pan" DataContext="{StaticResource Rutina}"
+                      UseSnapBackScrolling="False" ItemsSource="{Binding PanoramaItems}" ItemBox="2000" GroupHeight="300" Friction="0" Margin="200,150,200,0"/>
+
+    </Grid>
+</c:MetroWindow>

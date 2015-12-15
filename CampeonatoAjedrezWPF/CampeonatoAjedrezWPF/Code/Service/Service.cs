@@ -19,7 +19,7 @@ namespace CampeonatoAjedrezWPF
             {
                 if (daoParticipante == null)
                 {
-                    daoParticipante = Spring.Context.Support.ContextRegistry.GetContext().GetObject("DaoParticipante") as IParticipanteDAO;
+                    daoParticipante = Spring.Context.Support.ContextRegistry.GetContext().GetObject("DaoParticipantes") as IParticipanteDAO;
                 }
                 return daoParticipante;
             }

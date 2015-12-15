@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="CampeonatoAjedrezWPF.Controls.ControlPanorama"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:r="clr-namespace:CampeonatoAjedrezWPF.Routine"
+             xmlns:pan="clr-namespace:PanoramaControl;assembly=PanoramaControl"
+             mc:Ignorable="d" d:DesignHeight="900" Width="968">
+    <UserControl.Resources>
+        <DataTemplate   DataType="{x:Type r:PanoramaTileModel}">
+            <Border x:Name="bord" BorderThickness="0" Width="150" Height="150" Margin="0"
+                    BorderBrush="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Background}" 
+                    Background="{DynamicResource AccentColorBrush}">
+                <Button   Command="{Binding TileClickedCommand}" Width="{Binding Size}" Height="{Binding Size}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Image x:Name="img"  Grid.Row="0" Source="{Binding ImageUrl}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Row="1" Text="{Binding Text}" TextWrapping="Wrap" FontFamily="{DynamicResource DefaultFont}" FontSize="{DynamicResource {x:Static SystemFonts.CaptionFontSizeKey}}"
+                                       Foreground="White"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding IsDoubleWidth}" Value="True">
+                                    <Setter TargetName="img" Property="HorizontalAlignment" Value="Left" />
+                                    <Setter TargetName="img" Property="Margin" Value="10,0,0,0" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}, Mode=FindAncestor}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="bord" Property="BorderBrush" 
+                            Value="{DynamicResource AccentColorBrush2}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsDoubleWidth}" Value="True">
+                    <Setter TargetName="bord" Property="Width" Value="240" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <x:Array Type="Brush" x:Key="Colors">
+            <SolidColorBrush Color="{DynamicResource HighlightColor}"/>
+            <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            <SolidColorBrush Color="{DynamicResource AccentColor2}"/>
+            <SolidColorBrush Color="{DynamicResource AccentColor3}"/>
+            <SolidColorBrush Color="{DynamicResource AccentColor4}"/>
+        </x:Array>
+    </UserControl.Resources>
+    <Grid>
+        <Grid x:Name="LayoutRoot" Margin="0,0,0,0">
+            <pan:Panorama x:Name="pan" UseSnapBackScrolling="False" ItemsSource="{Binding PanoramaItems}" MinWidth="1000" Friction="0" 
+                          ItemBox="600" GroupHeight="1000" TileColors="{StaticResource Colors}" ComplimentaryTileColors="{StaticResource Colors}" />
+        </Grid>
+    </Grid>
+</UserControl>

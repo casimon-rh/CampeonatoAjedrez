@@ -25,7 +25,7 @@ namespace CampeonatoAjedrezWPF.Window.Catalogos
     {
         RutinasHoteles rutinas;
         Dispatcher dsDispatch;
-        public delegate void Show(bool b, EVENTO evt);
+        public delegate void _Show(bool b, EVENTO evt);
         public Hoteles()
         {
             try
@@ -66,7 +66,7 @@ namespace CampeonatoAjedrezWPF.Window.Catalogos
         {
 
             MessageDialogResult res = await Dialogs.showQuestionMessage(s, "Campeonato Ajedrez", this).ConfigureAwait(false);
-            Show ss = new Show(evalua);
+            _Show ss = new _Show(evalua);
             try
             {
                 dsDispatch.BeginInvoke(ss, res == MahApps.Metro.Controls.Dialogs.MessageDialogResult.Affirmative, evento);

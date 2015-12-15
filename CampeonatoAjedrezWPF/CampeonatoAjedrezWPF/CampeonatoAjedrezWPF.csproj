@@ -16,7 +16,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -49,6 +49,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -83,11 +85,21 @@
     <Compile Include="Code\Routine\Catalogos\RutinasParticipantes.cs" />
     <Compile Include="Code\Routine\Catalogos\RutinasPartidas.cs" />
     <Compile Include="Code\Routine\Catalogos\RutinasTelefonosDeHotel.cs" />
+    <Compile Include="Code\Routine\MainRoutine.cs" />
+    <Compile Include="Code\Routine\PanoramaTileModel.cs" />
     <Compile Include="Code\Service\Service.cs" />
+    <Compile Include="Controls\ControlPanorama.xaml.cs">
+      <DependentUpon>ControlPanorama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Window\Catalogos\CampeonatoPrevio.xaml.cs">
       <DependentUpon>CampeonatoPrevio.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\Catalogos\Hotel\Hoteles.xaml.cs">
+    <Compile Include="Window\Catalogos\Hoteles.xaml.cs">
       <DependentUpon>Hoteles.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\Catalogos\Localidades.xaml.cs">
@@ -99,7 +111,7 @@
     <Compile Include="Window\Catalogos\Partidas.xaml.cs">
       <DependentUpon>Partidas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\Catalogos\Hotel\TelefonosDeHotel.xaml.cs">
+    <Compile Include="Window\Catalogos\TelefonosDeHotel.xaml.cs">
       <DependentUpon>TelefonosDeHotel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window\MainPanorama.xaml.cs">
@@ -109,11 +121,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +137,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -145,17 +153,29 @@
       <Project>{942d11c4-29f5-46c4-8c14-4b976d56c637}</Project>
       <Name>MahApps.Metro.NET45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PanoramaControl\PanoramaControl.csproj">
+      <Project>{a9eaaa9a-e076-4c26-8834-d66eb8439bc1}</Project>
+      <Name>PanoramaControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{38348d71-4ac4-44e8-a62d-4cf757a720f4}</Project>
       <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\ControlPanorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Window\Catalogos\CampeonatoPrevio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\Catalogos\Hotel\Hoteles.xaml">
+    <Page Include="Window\Catalogos\Hoteles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,7 +191,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window\Catalogos\Hotel\TelefonosDeHotel.xaml">
+    <Page Include="Window\Catalogos\TelefonosDeHotel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,7 +200,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

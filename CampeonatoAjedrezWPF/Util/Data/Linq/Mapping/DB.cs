@@ -65,7 +65,7 @@ namespace Data.Linq.Mapping
 
         public void rollbackTransaction()
         {
-            .Transaction.Rollback();
+            this.Transaction.Rollback();
         }
     }
 }

@@ -11,7 +11,8 @@ namespace CampeonatoAjedrezWPF.Logic
     public class CatalogoHotel : ICatalogos<Hotel>
     {
         public IDaoCrud<Hotel> dao { get; set; }
-
+        
+        
         public void inserta(Hotel aux)
         {
             try

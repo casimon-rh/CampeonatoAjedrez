@@ -3,10 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CampeonatoAjedrezWPF.Window"
+        xmlns:pan="clr-namespace:PanoramaControl;assembly=PanoramaControl"
+        xmlns:local="clr-namespace:CampeonatoAjedrezWPF.Controls"
+        xmlns:r="clr-namespace:CampeonatoAjedrezWPF.Routine"
         xmlns:c="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        mc:Ignorable="d" Title="MainPanorama" Height="300" Width="300">
-    <Grid>
-        
+        mc:Ignorable="d" Title="Campeonato Ajedrez" WindowState="Maximized" 
+        ResizeMode="CanMinimize" Height="800" Width="1400">
+    <Window.Resources>
+        <r:MainRoutine x:Key="Rutina"/>
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" >
+        <c:ProgressRing x:Name="Ring" Margin="178,64,189,104" Height="153" Width="152"/>
+        <c:FlipView IsStatic="False" Name="Flip" Margin="0,-49,0,-9" FontSize="10">
+            <local:ControlPanorama x:Name="Pan1" DataContext="{StaticResource Rutina}" 
+                                   PanoramaItems="{Binding PanoramaItems}" Size="150" GroupHeight="3000" ItemBox="2000" Margin="-230,50,-227,2" />
+            <local:ControlPanorama x:Name="Pan2" Size="150" GroupHeight="300" ItemBox="2000" Margin="-230,50,-227,2" />
+        </c:FlipView>
     </Grid>
 </c:MetroWindow>

@@ -9,7 +9,7 @@
         GlowBrush="{DynamicResource AccentColorBrush}" ResizeMode="NoResize" ShowIconOnTitleBar="True"
         mc:Ignorable="d" Title="Localidades" Height="402" Width="596">
     <Window.Resources>
-        <r:RutinasCatalogos x:Key="Rutina" />
+        <r:RutinasLocalidades x:Key="Rutina" />
     </Window.Resources>
     <Grid>
         <Button Margin="10,65,0,0" x:Name="Nuevo" Style="{DynamicResource SquareButtonStyle}" Click="Nuevo_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84">
