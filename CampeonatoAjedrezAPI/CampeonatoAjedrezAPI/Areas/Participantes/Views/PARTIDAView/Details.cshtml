@@ -1,0 +1,35 @@
+﻿@model CampeonatoAjedrezAPI.Areas.PARTIDA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PARTIDA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ARBITRO.IDARBITRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARBITRO.IDARBITRO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HORA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HORA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPARTIDA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

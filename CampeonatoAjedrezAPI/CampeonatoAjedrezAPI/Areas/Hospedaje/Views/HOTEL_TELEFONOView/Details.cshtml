@@ -1,0 +1,35 @@
+﻿@model CampeonatoAjedrezAPI.Areas.HOTEL_TELEFONO
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOTEL_TELEFONO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HOTEL.NOMBREHOTEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOTEL.NOMBREHOTEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_TELEFONO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

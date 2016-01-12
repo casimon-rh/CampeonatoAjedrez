@@ -9,6 +9,6 @@ namespace Data.Linq.DAO
 {
     public class DaoDictionary
     {
-        public Dictionary<string, ICatalogos<object>> daos { get; set; }
+        public Dictionary<string, object> daos { get; set; }
     }
 }

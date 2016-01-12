@@ -1,0 +1,40 @@
+﻿@model IEnumerable<CampeonatoAjedrezAPI.Areas.HOTEL_TELEFONO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HOTEL.NOMBREHOTEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOTEL.NOMBREHOTEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TELEFONO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_TELEFONO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_TELEFONO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_TELEFONO })
+        </td>
+    </tr>
+}
+
+</table>

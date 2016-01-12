@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Data.Linq.Mapping
 {
-    public class DB : DataContext,IContexto
+    public class DB : DataContext, IContexto
     {
         public Table<Alojamiento> Alojamiento;
         public Table<Arbitro> Arbitro;
@@ -24,7 +24,7 @@ namespace Data.Linq.Mapping
         public Table<PartidaJugador> PartidaJugador;
         public Table<Telefono> Telefono;
 
-        public DB(string ConnString) : base(ConnString) {}
+        public DB(string ConnString) : base(new MySql.Data.MySqlClient.MySqlConnection(ConnString)) { }
 
         public void beginTransaction()
         {

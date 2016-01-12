@@ -1,0 +1,57 @@
+﻿@model CampeonatoAjedrezAPI.Areas.HOTEL
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HOTEL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBREHOTEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBREHOTEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRNUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRNUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRCALLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRCALLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRCP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRCP)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

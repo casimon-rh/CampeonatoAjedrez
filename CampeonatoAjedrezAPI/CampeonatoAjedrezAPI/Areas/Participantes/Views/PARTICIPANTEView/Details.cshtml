@@ -1,0 +1,67 @@
+﻿@model CampeonatoAjedrezAPI.Areas.PARTICIPANTE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PARTICIPANTE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ARBITRO.IDARBITRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARBITRO.IDARBITRO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JUGADOR.IDJUGADOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JUGADOR.IDJUGADOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCALIDAD.NOMLOCALIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCALIDAD.NOMLOCALIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APPATERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APPATERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APMATERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APMATERNO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PARTICIPANTE }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
