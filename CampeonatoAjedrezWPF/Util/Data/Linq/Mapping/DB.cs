@@ -24,7 +24,7 @@ namespace Data.Linq.Mapping
         public Table<PartidaJugador> PartidaJugador;
         public Table<Telefono> Telefono;
 
-        public DB(string ConnString) : base(new MySql.Data.MySqlClient.MySqlConnection(ConnString)) { }
+        public DB(string ConnString) : base((ConnString)) { }
 
         public void beginTransaction()
         {

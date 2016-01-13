@@ -49,10 +49,10 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_participante}" />
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Current.nombre}" />
-                        <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding Current.appaterno}" />
-                        <DataGridTextColumn Header="Apellido Materno" Binding="{Binding Current.apmaterno}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_participante}" />
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" />
+                        <DataGridTextColumn Header="Apellido Paterno" Binding="{Binding appaterno}" />
+                        <DataGridTextColumn Header="Apellido Materno" Binding="{Binding apmaterno}" />
                         <DataGridTextColumn Header="Localidad" Binding="{Binding CurrentLocalidad.nombrelocalidad}" />
                     </DataGrid.Columns>
                 </DataGrid>

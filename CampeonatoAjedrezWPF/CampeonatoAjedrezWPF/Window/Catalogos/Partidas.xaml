@@ -49,9 +49,9 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.idpartida}" />
-                        <DataGridTextColumn Header="Arbitro" Binding="{Binding CurrentArbitro.nombre}" />
-                        <DataGridTextColumn Header="Hora" Binding="{Binding Current.hora}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding idpartida}" />
+                        <DataGridTextColumn Header="Arbitro" Binding="{Binding nombre}" />
+                        <DataGridTextColumn Header="Hora" Binding="{Binding hora}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

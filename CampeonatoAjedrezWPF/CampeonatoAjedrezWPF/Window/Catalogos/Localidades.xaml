@@ -49,14 +49,14 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_hotel}" />
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Current.nombrelocalidad}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_hotel}" />
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding nomlocalidad}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
             <Grid>
-                <Label Content="Nombre:" Margin="10,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
-                <TextBox Margin="136,6,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.nombrelocalidad,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <Label Content="Nombre:" Margin="10,6,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
+                <TextBox Margin="136,6,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.nomlocalidad,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Button x:Name="Borrar" Margin="0,253,10,0" Style = "{DynamicResource SquareButtonStyle}" Click="Borrar_Click" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="89">
                     <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
                         <Rectangle Width="20" Height="20" Fill="Black">

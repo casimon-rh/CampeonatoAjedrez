@@ -29,7 +29,7 @@ namespace Data.Linq.DAO
         {
             try
             {
-                return data.Arbitro.Select(x => new Arbitro() { idarbitro = x.idarbitro, participante = getParticipante(x.idarbitro) }).ToList();
+                return data.Arbitro.Select(x => x).ToList();// new Arbitro() { idarbitro = x.idarbitroparticipante = getParticipante(x.idarbitro) }).ToList();
             }
             catch (Exception)
             {
@@ -41,7 +41,7 @@ namespace Data.Linq.DAO
         {
             try
             {
-                return data.Jugador.Select(x => new Jugador() { idjugador = x.idjugador, nivel = x.nivel, participante = getParticipante(x.idjugador) }).ToList();
+                return data.Jugador.Select(x => x).ToList();// new Jugador() { idjugador = x.idjugador, nivel = x.nivel, participante = getParticipante(x.idjugador) }).ToList();
             }
             catch (Exception)
             {

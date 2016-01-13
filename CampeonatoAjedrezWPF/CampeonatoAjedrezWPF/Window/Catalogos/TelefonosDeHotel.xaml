@@ -49,8 +49,8 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_telefono}" />
-                        <DataGridTextColumn Header="Telefono" Binding="{Binding Current.telefono}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_telefono}" />
+                        <DataGridTextColumn Header="Telefono" Binding="{Binding telefono}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

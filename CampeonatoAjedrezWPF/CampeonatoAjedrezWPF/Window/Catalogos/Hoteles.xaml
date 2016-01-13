@@ -49,11 +49,11 @@
                           SelectedItem="{Binding Path=Current,Mode=TwoWay}" SelectionChanged="ElDataGrid_SelectionChanged" AutoGenerateColumns="False"
                           IsReadOnly="True" Margin="22,33,25,25">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Binding="{Binding Current.id_hotel}" />
-                        <DataGridTextColumn Header="Nombre" Binding="{Binding Current.nombrehotel}" />
-                        <DataGridTextColumn Header="Numero" Binding="{Binding Current.dirnum}" />
-                        <DataGridTextColumn Header="Calle" Binding="{Binding Current.dircalle}" />
-                        <DataGridTextColumn Header="Codigo Postal" Binding="{Binding Current.dircp}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_hotel}" />
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding nombrehotel}" />
+                        <DataGridTextColumn Header="Numero" Binding="{Binding dirnum}" />
+                        <DataGridTextColumn Header="Calle" Binding="{Binding dircalle}" />
+                        <DataGridTextColumn Header="Codigo Postal" Binding="{Binding dircp}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -65,7 +65,7 @@
                 <Label Content="Calle:" Margin="10,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" />
                 <TextBox Margin="136,111,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dircalle,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Label Content="Codigo Postal:" Margin="10,171,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94" />
-                <TextBox Margin="136,171,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dirnum,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
+                <TextBox Margin="136,171,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171" Text="{Binding Current.dircp,Mode=TwoWay}" DataContext="{Binding Source={StaticResource Rutina}}" />
                 <Button x:Name="Borrar" Margin="0,253,10,0" Style = "{DynamicResource SquareButtonStyle}" Click="Borrar_Click" Height="37" VerticalAlignment="Top" HorizontalAlignment="Right" Width="89">
                     <StackPanel Orientation="Horizontal" Width="84" Margin="0 0 0 0">
                         <Rectangle Width="20" Height="20" Fill="Black">

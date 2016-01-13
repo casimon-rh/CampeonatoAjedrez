@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampeonatoAjedrezAPI", "CampeonatoAjedrezAPI\CampeonatoAjedrezAPI.csproj", "{1FA77824-9229-441E-A101-19FB322E3F66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampeonatoAjedrezAPI.Tests", "CampeonatoAjedrezAPI.Tests\CampeonatoAjedrezAPI.Tests.csproj", "{2C41C7A5-B9FC-47D8-93CF-D59B179F64C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FA77824-9229-441E-A101-19FB322E3F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA77824-9229-441E-A101-19FB322E3F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA77824-9229-441E-A101-19FB322E3F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA77824-9229-441E-A101-19FB322E3F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C41C7A5-B9FC-47D8-93CF-D59B179F64C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C41C7A5-B9FC-47D8-93CF-D59B179F64C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C41C7A5-B9FC-47D8-93CF-D59B179F64C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C41C7A5-B9FC-47D8-93CF-D59B179F64C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
